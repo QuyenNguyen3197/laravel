@@ -31,8 +31,12 @@ $tasks=[
     new Task(2,'DEF','98765','1......5','false','2023-12-26','2023-12-26')
 ];
 
+// Route::get('/', function () {
+//     return view('home',['name'=>'Hello']);
+// });
+
 Route::get('/', function () {
-    return view('home',['name'=>'Hello']);
+    return view('layouts.app',['task'=>$tasks]); //đường đi: thư mục -> file
 });
 
 // Route::get('/product/{id}', function($id){
