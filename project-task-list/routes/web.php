@@ -36,7 +36,7 @@ $tasks=[
 // });
 
 Route::get('/', function () {
-    return view('layouts.app',['task'=>$tasks]); //đường đi: thư mục -> file
+    return view('layouts.app'); //đường đi: thư mục -> file
 });
 
 // Route::get('/product/{id}', function($id){
