@@ -35,17 +35,21 @@ Route::get('/', function () {
     return view('home',['name'=>'Hello']);
 });
 
-Route::get('/aboutus', function () use($tasks) {
+// Route::get('/product/{id}', function($id){
+//     return "Product Show".$id;
+// })->name('product.show');
+
+Route::get('/product/{id}', function($id){
+    return view("viewProduct", ['id'=> $id]); //chỉ sd view khi có sự tồn tại file trong thư mục view
+})->name('product.show');
+
+Route::get('/product', function () use($tasks) {
     
-    return view('aboutus',['task'=>$tasks]);
-});
+    return view('product',['task'=>$tasks]);
+})->name('product.index');
 
 Route::get('/contactus', function () {
     return view('contactus');
-});
-
-Route::get('/product', function () {
-    return view('product');
 });
 
 Route::get('/hello', function () {
