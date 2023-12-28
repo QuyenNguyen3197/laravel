@@ -52,6 +52,26 @@ Route::get('/hello', function () {
     return view('hello');
 });
 
+// Route::get('/hello', function () {
+//     return "hello";
+// });
+
+// Route::get('/hello', function () {
+//     return "hello 1";
+// });
+
+Route::get('/hello1', function () {
+        return "hello 1";
+    })->name('hello1.show');
+    
+    Route::get('/hello2', function () {
+        return "hello 2";
+    })->name('hello2');
+
 Route::get('/hallo', function () {
-    return redirect()->route('hello');
+    return redirect('hello');
+});
+
+Route::fallback(function () {
+    return "Error 404!";
 });
